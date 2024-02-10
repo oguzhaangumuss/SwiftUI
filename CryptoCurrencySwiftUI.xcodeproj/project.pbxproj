@@ -57,10 +57,10 @@
 		DD824E942B77D45300089E17 /* CryptoCurrencySwiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				DD824EA32B77D51000089E17 /* Model */,
 				DD824EA62B77D54300089E17 /* Service */,
 				DD824EA52B77D52500089E17 /* Viewodel */,
 				DD824EA42B77D52000089E17 /* View */,
-				DD824EA32B77D51000089E17 /* Model */,
 				DD824E952B77D45300089E17 /* CryptoCurrencySwiftUIApp.swift */,
 				DD824E992B77D45400089E17 /* Assets.xcassets */,
 				DD824E9B2B77D45400089E17 /* Preview Content */,

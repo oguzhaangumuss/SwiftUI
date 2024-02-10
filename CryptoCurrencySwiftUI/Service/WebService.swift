@@ -10,8 +10,16 @@ import Foundation
 
 class WebService {
     
-    //Escaping func . wait till func complete
-    func downloadCurrencies(url: URL, completion : @escaping(Result <[CryptoCurrency]?,DownloadError>) -> Void ){
+    func downloadCurrenciesAsync(url : URL) async throws -> [CryptoCurrency]{
+        let (data, _ ) = try await URLSession.shared.data(from: url)
+        
+        let currencies = try? JSONDecoder().decode([CryptoCurrency].self, from: data)
+        
+        return currencies ?? []
+    }
+    
+    //Escaping func
+    /*func downloadCurrencies(url: URL, completion : @escaping(Result <[CryptoCurrency]?,DownloadError>) -> Void ){
         URLSession.shared.dataTask(with: url) { data, response, error in
             
             if let error = error {
@@ -27,7 +35,7 @@ class WebService {
             completion(.success(currencies))
         }.resume()
     }
-    
+    */
     enum DownloadError : Error {
         case badUrl
         case noData
